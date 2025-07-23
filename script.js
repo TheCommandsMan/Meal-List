@@ -1,8 +1,12 @@
 const meals = [
   "Bangers and mash",
   "Tacos",
+  "Tacos",
   "Quesadillas",
   "Chicken and rice",
+  "Chicken and rice",
+  "Hamburgers",
+  "Pizza",
   "Hamburgers",
   "Pizza",
   "Pasta with chicken",
@@ -24,7 +28,8 @@ const meals = [
   "Beef bulgogi",
   "Garlic shrimp",
   "Chilaquiles",
-  "Curry"
+  "Curry",
+  "Specialy Meal"
 ];
 
 // Simple seeded PRNG
@@ -62,3 +67,11 @@ function generateMeals() {
     mealList.appendChild(li);
   });
 }
+
+window.onload = () => {
+  const today = new Date();
+  const mm = String(today.getMonth() + 1).padStart(2, '0');
+  const dd = String(today.getDate()).padStart(2, '0');
+  const yy = String(today.getFullYear()).slice(-2);
+  document.getElementById("codeInput").value = mm + dd + yy;
+};
